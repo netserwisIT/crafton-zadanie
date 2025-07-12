@@ -56,6 +56,7 @@ php hyde build
 Start the development server:
 ```bash
 npm run dev
+php hyde serve
 ```
 
 Build for production:
