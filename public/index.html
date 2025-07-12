@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crafton - zadanie rekrutacyjne - Homepage</title>
+
+<link rel="icon" type="image/png" href="media/images/favicon.png?v=6085a908" />
+
+
+<meta name="twitter:title" content="Crafton - zadanie rekrutacyjne - Homepage">
+<meta property="og:title" content="Crafton - zadanie rekrutacyjne - Homepage">
+
+
+<meta property="og:site_name" content="Crafton - zadanie rekrutacyjne">
+
+
+
+
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=instrument-sans:400,600" rel="stylesheet" />
+
+<style>[x-cloak] {display: none!important}</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x/dist/css/glide.core.min.css">
+
+    <link rel="stylesheet" href="media/app.css?v=a9f1be16">
+
+
+
+    
+    <meta id="meta-color-scheme" name="color-scheme" content="light">
+    <script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+
+
+
+
+
+
+</head>
+<body id="app" class="relative w-full overflow-x-clip" x-data>
+    <header 
+  id="header" 
+  x-data="{
+    open: false,
+    sticky: false,
+    lastScrollY: 0
+    }" 
+  @scroll.window="
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY) {
+      if (currentScrollY > 460) sticky = true;
+    } else {
+      if (currentScrollY < 400) sticky = false;
+    }
+    lastScrollY = currentScrollY;
+  "
+  class="bg-white border-b border-stroke-base dark:bg-dark dark:border-stroke-on-dark z-10"
+  :class="sticky ? ' sticky top-0 py-1' : 'py-4'"
+>
+  <div class="container mx-auto px-6">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between" aria-label="Główna nawigacja">
+      <a href="#" class="block">
+    <span class="sr-only">Crafton</span>
+    <img class="dark:hidden h-5 w-[101px]" height="20" width="101" src="media/images/logo.svg?v=ee314ed8" alt="Logo" />
+    <img class="hidden dark:block h-5 w-[101px]" height="20" width="101" src="media/images/logo-white.svg?v=c1717e69" alt="Logo" />
+</a>      <ul class="flex gap-3 hidden xl:flex flex-1 justify-center">
+            <li class="relative group" >
+                            <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Home
+    </span>
+</a>                    </li>
+            <li class="relative group"  x-data x-popover="true" >
+                            <button type="button" class="flex items-center whitespace-nowrap cursor-pointer gap-1 px-4 py-2 text-base font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary" x-popover:button aria-haspopup="true" aria-expanded="false">
+                    <span>O nas</span>
+                    <span aria-hidden="true" class="menu-nav-item-icon pl-1">
+                        <svg class="w-[9px] h-[7px] shrink-0" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 1.515L7.9425 0.4575L4.5 3.8925L1.0575 0.4575L0 1.515L4.5 6.015L9 1.515Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                </button>
+                <ul 
+                    x-popover:panel 
+                    x-cloak
+                    class="absolute left-0 min-w-48 rounded-lg shadow-sm mt-2 z-10 origin-top-left bg-white p-1.5 outline-none"
+                    >
+                     
+                    <li>
+                        <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Nasza historia
+    </span>
+</a>                    </li>
+                     
+                    <li>
+                        <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Zespół
+    </span>
+</a>                    </li>
+                     
+                    <li>
+                        <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Kariera
+    </span>
+</a>                    </li>
+                                    </ul>
+                    </li>
+            <li class="relative group"  x-data x-popover="true" >
+                            <button type="button" class="flex items-center whitespace-nowrap cursor-pointer gap-1 px-4 py-2 text-base font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary" x-popover:button aria-haspopup="true" aria-expanded="false">
+                    <span>Nasze inwestycje</span>
+                    <span aria-hidden="true" class="menu-nav-item-icon pl-1">
+                        <svg class="w-[9px] h-[7px] shrink-0" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 1.515L7.9425 0.4575L4.5 3.8925L1.0575 0.4575L0 1.515L4.5 6.015L9 1.515Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                </button>
+                <ul 
+                    x-popover:panel 
+                    x-cloak
+                    class="absolute left-0 min-w-48 rounded-lg shadow-sm mt-2 z-10 origin-top-left bg-white p-1.5 outline-none"
+                    >
+                     
+                    <li>
+                        <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Inwestycja 1
+    </span>
+</a>                    </li>
+                     
+                    <li>
+                        <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Inwestycja 2
+    </span>
+</a>                    </li>
+                     
+                    <li>
+                        <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Inwestycja 3
+    </span>
+</a>                    </li>
+                                    </ul>
+                    </li>
+            <li class="relative group" >
+                            <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Poradnik
+    </span>
+</a>                    </li>
+            <li class="relative group" >
+                            <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Wynajmij
+    </span>
+</a>                    </li>
+    </ul>      <div class="flex items-center gap-3 justify-end">
+        <button @click="open = !open" class="navbar-burger self-center flex items-center gap-2 my-2 xl:hidden dark:text-white hover:text-primary-hovered">
+          <span class="sr-only">MENU</span>
+          <svg class="size-6 shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12H21M3 6H21M9 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="hidden md:flex">
+          <a href="#" class="px-6 lg:px-7 py-[13px] bg-primary text-white hover:bg-primary-hovered active:bg-primary-clicked rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px]" href="#" text="Kontakt" type="primary-sm" icon="true">
+    Kontakt
+            <span class="ml-2.5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.92235 15.3228L4.74384 14.1443L11.8149 7.07324L5.3331 7.07324V5.39975H14.6669V14.7336H12.9934L12.9934 8.25175L5.92235 15.3228Z" fill="currentColor"/>
+</svg>        </span>
+      
+</a>        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    x-dialog
+    x-model="open"
+    style="display: none"
+    class="fixed inset-0 overflow-hidden z-50"
+>
+    <!-- Overlay -->
+    <div
+        x-dialog:overlay
+        x-transition.opacity
+        class="fixed inset-0 bg-white/50 z-50"
+    ></div>
+
+    <!-- Panel -->
+    <div class="fixed inset-y-0 right-0 max-w-lg px-0 w-full z-50">
+        <div
+            x-dialog:panel x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="translate-x-full"
+            x-transition:enter-end="translate-x-0"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="translate-x-0"
+            x-transition:leave-end="translate-x-full"
+            class="h-full w-full"
+        >
+            <div class="h-full flex flex-col justify-between bg-white dark:bg-dark shadow-lg relative">
+                <div class="flex items-center justify-between gap-2 px-12 py-2 z-10 border-b border-stroke-base dark:border-stroke-on-dark">
+                    <a href="#" class="block">
+    <span class="sr-only">Crafton</span>
+    <img class="dark:hidden h-5 w-[101px]" height="20" width="101" src="media/images/logo.svg?v=ee314ed8" alt="Logo" />
+    <img class="hidden dark:block h-5 w-[101px]" height="20" width="101" src="media/images/logo-white.svg?v=c1717e69" alt="Logo" />
+</a>                    <!-- Close Button -->
+                    <div class="relative flex items-center gap-2">
+                        <button type="button" @click="$dialog.close()" class=" p-2 text-dark dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary-clicked rounded-full">
+                            <span class="sr-only">Zamknij menu</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- Body -->
+                <div class="space-y-6 flex-1 px-8 pt-8 flex flex-col justify-start gap-4 overflow-y-auto pb-16">
+                    <ul class="flex flex-col gap-3">
+                                                    <li class="relative w-full group">
+                                                                    <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Home
+    </span>
+</a>                                                            </li>
+                                                    <li class="relative w-full group">
+                                                                    <span class="flex items-center whitespace-nowrap cursor-pointer gap-1 px-4 py-2 text-base font-heading text-[15px] uppercase text-background-medium-surface">
+                                        <span>O nas</span>
+                                    </span>
+                                    <ul class="ml-4 border-l border-stroke-base dark:border-stroke-on-dark space-y-2">
+                                         
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Nasza historia
+    </span>
+</a>                                        </li>
+                                         
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Zespół
+    </span>
+</a>                                        </li>
+                                         
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Kariera
+    </span>
+</a>                                        </li>
+                                                                            </ul>
+                                                            </li>
+                                                    <li class="relative w-full group">
+                                                                    <span class="flex items-center whitespace-nowrap cursor-pointer gap-1 px-4 py-2 text-base font-heading text-[15px] uppercase text-background-medium-surface">
+                                        <span>Nasze inwestycje</span>
+                                    </span>
+                                    <ul class="ml-4 border-l border-stroke-base dark:border-stroke-on-dark space-y-2">
+                                         
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Inwestycja 1
+    </span>
+</a>                                        </li>
+                                         
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Inwestycja 2
+    </span>
+</a>                                        </li>
+                                         
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Inwestycja 3
+    </span>
+</a>                                        </li>
+                                                                            </ul>
+                                                            </li>
+                                                    <li class="relative w-full group">
+                                                                    <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Poradnik
+    </span>
+</a>                                                            </li>
+                                                    <li class="relative w-full group">
+                                                                    <a href="#" class="block px-4 py-2 text-base whitespace-nowrap font-heading text-[15px] uppercase text-dark dark:text-white hover:text-primary">
+    <span class="font-semibold leading-none">
+        Wynajmij
+    </span>
+</a>                                                            </li>
+                                            </ul>
+                    <a href="#" class="px-6 lg:px-7 py-[13px] bg-primary text-white hover:bg-primary-hovered active:bg-primary-clicked rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px] text-sm/6 font-semibold" href="#" text="Kontakt" type="primary-sm" icon="true">
+    Kontakt
+            <span class="ml-2.5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.92235 15.3228L4.74384 14.1443L11.8149 7.07324L5.3331 7.07324V5.39975H14.6669V14.7336H12.9934L12.9934 8.25175L5.92235 15.3228Z" fill="currentColor"/>
+</svg>        </span>
+      
+</a>                </div>
+            </div>
+        </div>
+    </div>
+</div></header>
+
+    
+<main class="w-full">
+    <section class="relative w-full py-16 lg:py-20 bg-white dark:bg-dark">
+    <div class="container mx-auto px-6">
+        <div class="space-y-5 max-w-7xl mx-auto">
+            <h1 class="text-dark dark:text-white text-h1-hero uppercase font-medium font-heading">
+    Twój klucz do lepszej przyszłości
+</h1>            <p class="text-body-lg text-pretty max-w-2xl text-text dark:text-text-on-dark">W RealEstate nieruchomości to coś więcej niż tylko budynki - to miejsca, w&nbsp;których powstają historie, rozwijają się biznesy i spełniają marzenia.</p>
+            <div class="pt-2.5 flex flex-col sm:flex-row gap-4">
+                <a href="#" class="px-6 lg:px-8 py-4 lg:py-[18px] bg-primary text-white hover:bg-primary-hovered active:bg-primary-clicked rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px] uppercase" href="#" text="Nasze inwestycje" type="primary" icon="true">
+    Nasze inwestycje
+            <span class="ml-2.5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.92235 15.3228L4.74384 14.1443L11.8149 7.07324L5.3331 7.07324V5.39975H14.6669V14.7336H12.9934L12.9934 8.25175L5.92235 15.3228Z" fill="currentColor"/>
+</svg>        </span>
+      
+</a>                <a href="#" class="px-6 lg:px-8 py-4 lg:py-[18px] text-dark dark:text-white bg-transparent ring ring-stroke-base ring-inset hover:text-text-on-dark active:text-background-medium-surface rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px] uppercase" href="#" text="Poznajmy się" type="secondary" icon="true">
+    Poznajmy się
+            <span class="ml-2.5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.92235 15.3228L4.74384 14.1443L11.8149 7.07324L5.3331 7.07324V5.39975H14.6669V14.7336H12.9934L12.9934 8.25175L5.92235 15.3228Z" fill="currentColor"/>
+</svg>        </span>
+      
+</a>            </div>
+        </div>
+    </div>
+</section>    <section class="relative w-full dark:bg-dark">
+    <div class="container mx-auto px-6 space-y-8 lg:space-y-20">
+        <header class="max-w-7xl mx-auto text-center space-y-5">
+            <h2 class="text-dark dark:text-white text-h2 uppercase font-medium font-heading">
+    Nasze inwestycje
+</h2>            <p class="text-body-base text-pretty max-w-3xl lg:mx-auto text-text dark:text-text-on-dark">Nasze inwestycje to miejsca, które łączą nowoczesny design, funkcjonalność i trwałość. Każdy projekt realizowany przez RealEstate to wynik pasji, zaangażowania i dbałości o każdy szczegół.</p>
+        </header>
+        <div class="max-w-7xl mx-auto no-scrollbar"
+            x-data="{
+                init() {
+                    new Glide(this.$refs.glide, {
+                        perView: 1,
+                        rewind: false,
+                        rewindDuration: 2000,
+                        animationDuration: 1000,
+                        type: 'slider',
+                    }).mount()
+                },
+            }"
+        >
+        <div x-ref="glide" class="glide block relative">
+            <div class="glide__track bg-white border border-stroke-base dark:bg-dark dark:border-stroke-on-dark rounded-theme-inner overflow-hidden" data-glide-el="track">
+                <ul class="glide__slides">
+                                            <li class="whitespace-normal w-full">
+                            <div class="grid lg:grid-cols-12 gap-4">
+                                <div class="lg:col-span-5 flex flex-col justify-center p-6 space-y-8">
+                                    <div class="space-y-4 xl:-mt-16 xl:pr-8">
+                                        <div class="flex items-center gap-2">
+                                            <span aria-hidden="true" class="relative w-[50px] h-[50px] shrink-0 flex items-center text-primary bg-background-medium-surface rounded-full border-[7px] border-stroke-subtle justify-center overflow-hidden">
+                                                <span class="absolute size-6 left-1/2 top-1/2 transform -translate-1/2 bg-gradient-to-t from-dark to-background-medium-surface blur opacity-20 skew-12"></span>
+                                                <svg class="w-[14px] h-[19px] shrink-0" width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.05078 16.7188C9.16331 16.5081 9.42608 16.4253 9.63867 16.542C10.2107 16.8569 10.582 17.3082 10.582 17.834C10.5819 18.4329 10.1147 18.9207 9.4043 19.2432C8.74824 19.5408 7.89412 19.7002 7 19.7002C6.10589 19.7002 5.25173 19.5408 4.5957 19.2432C3.88542 18.9207 3.41808 18.4329 3.41797 17.834C3.41797 17.3092 3.78802 16.8582 4.3584 16.543L4.44043 16.5088C4.63455 16.4489 4.8485 16.5346 4.94727 16.7197C5.05912 16.9297 4.98352 17.1931 4.77441 17.3096L4.77344 17.3105C4.59615 17.4085 4.46965 17.5092 4.38965 17.6035C4.30982 17.6976 4.28418 17.7754 4.28418 17.834C4.28426 17.902 4.32146 17.999 4.43945 18.1162C4.55607 18.232 4.73609 18.3517 4.97852 18.459C5.46261 18.6732 6.16327 18.8261 7 18.8262C7.83663 18.8262 8.53736 18.6732 9.02148 18.459C9.26409 18.3516 9.44491 18.2321 9.56152 18.1162C9.67949 17.999 9.71574 17.9019 9.71582 17.834C9.71582 17.7753 9.69055 17.6968 9.61035 17.6025C9.52997 17.5081 9.40252 17.4075 9.22461 17.3096C9.01505 17.1938 8.93852 16.9292 9.05078 16.7188ZM7 0.299805C10.4221 0.299912 13.2002 3.13253 13.2002 6.60645C13.2001 6.93569 13.057 7.4353 12.8311 8.03613C12.6014 8.64669 12.2745 9.39067 11.8828 10.2207C11.0993 11.8812 10.0517 13.9008 8.99316 15.916C8.80372 16.2767 8.63427 16.5985 8.49023 16.875L8.1377 17.5605C7.91736 18.0023 7.49037 18.2705 7 18.2705C6.5094 18.2704 6.08266 18.0025 5.8623 17.5605C5.65612 17.1476 5.30621 16.4893 4.89941 15.7227C3.86843 13.7801 2.84741 11.8297 2.08398 10.21C1.70235 9.40024 1.38307 8.66973 1.15918 8.06152C0.938183 7.46117 0.799805 6.95534 0.799805 6.60645C0.799838 3.13253 3.57781 0.299805 7 0.299805ZM7 1.1748C4.0623 1.17491 1.66602 3.60867 1.66602 6.60645C1.66608 6.7303 1.69967 6.91897 1.77246 7.1709C1.84429 7.41946 1.94977 7.71641 2.08203 8.05078C2.34649 8.71934 2.7151 9.52781 3.12891 10.3838C3.9563 12.0952 4.95941 13.9856 5.66211 15.3096C6.06915 16.0765 6.42302 16.7428 6.63477 17.167C6.70933 17.3163 6.83925 17.3964 7 17.3965C7.16084 17.3965 7.29064 17.3164 7.36523 17.167C7.54799 16.8014 7.84959 16.2284 8.22852 15.5068C8.95024 14.1325 9.98083 12.17 10.8311 10.4102C11.2562 9.53008 11.6353 8.70365 11.9072 8.02832C12.0432 7.69054 12.1507 7.39294 12.2246 7.14746C12.2999 6.89723 12.335 6.71701 12.335 6.60645C12.3349 3.60785 9.93776 1.1748 7 1.1748ZM7 2.58008C9.18688 2.58008 10.9599 4.38958 10.96 6.60645C10.96 8.82334 9.1869 10.6328 7 10.6328C4.81319 10.6327 3.04004 8.82327 3.04004 6.60645C3.04007 4.38965 4.81321 2.58018 7 2.58008ZM7 3.4541C5.29759 3.45421 3.90628 4.865 3.90625 6.60645C3.90625 8.34792 5.29757 9.75868 7 9.75879C8.7025 9.75879 10.0947 8.3476 10.0947 6.60645C10.0947 4.86531 8.70248 3.4541 7 3.4541Z" fill="#316FAF" stroke="currentColor" stroke-width="0.4"/>
+                                                </svg>
+                                            </span>
+                                            <span class="font-heading font-medium text-[15px] text-dark dark:text-text-on-dark">Poznań 20-300</span>
+                                        </div>
+                                        <h3 class="text-h3 uppercase font-heading font-semibold mb-4 dark:text-white">
+    Poznań Park
+</h3>                                        <p class="text-text dark:text-text-on-dark mb-4">Poznań Park to kameralne osiedle nowoczesnych domów, które harmonijnie łączy komfort życia z bliskością natury. Położone zaledwie 10 minut od centrum Poznania, oferuje ciszę i zieleń bez kompromisów – z łatwym dostępem do miejskich udogodnień.</p>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="px-6 lg:px-8 py-4 lg:py-[18px] bg-primary text-white hover:bg-primary-hovered active:bg-primary-clicked rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px]" href="#" text="Poznaj szczegóły" type="primary" icon="true">
+    Poznaj szczegóły
+            <span class="ml-2.5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.92235 15.3228L4.74384 14.1443L11.8149 7.07324L5.3331 7.07324V5.39975H14.6669V14.7336H12.9934L12.9934 8.25175L5.92235 15.3228Z" fill="currentColor"/>
+</svg>        </span>
+      
+</a>                                    </div>
+                                </div>
+                                <div class="lg:col-span-7">
+                                    <figure class="relative">
+            <picture>
+            <source srcset="media/images/invest.webp" type="image/webp" class="w-full h-[540px] object-cover object-center lg:rounded-r-theme-inner">
+            <img src="media/images/invest.jpg" alt="Poznań Park" class="w-full h-[540px] object-cover object-center lg:rounded-r-theme-inner">
+        </picture>
+        </figure>                                </div>
+                            </div>
+                        </li>
+                                            <li class="whitespace-normal w-full">
+                            <div class="grid lg:grid-cols-12 gap-4">
+                                <div class="lg:col-span-5 flex flex-col justify-center p-6 space-y-8">
+                                    <div class="space-y-4 xl:-mt-16 xl:pr-8">
+                                        <div class="flex items-center gap-2">
+                                            <span aria-hidden="true" class="relative w-[50px] h-[50px] shrink-0 flex items-center text-primary bg-background-medium-surface rounded-full border-[7px] border-stroke-subtle justify-center overflow-hidden">
+                                                <span class="absolute size-6 left-1/2 top-1/2 transform -translate-1/2 bg-gradient-to-t from-dark to-background-medium-surface blur opacity-20 skew-12"></span>
+                                                <svg class="w-[14px] h-[19px] shrink-0" width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.05078 16.7188C9.16331 16.5081 9.42608 16.4253 9.63867 16.542C10.2107 16.8569 10.582 17.3082 10.582 17.834C10.5819 18.4329 10.1147 18.9207 9.4043 19.2432C8.74824 19.5408 7.89412 19.7002 7 19.7002C6.10589 19.7002 5.25173 19.5408 4.5957 19.2432C3.88542 18.9207 3.41808 18.4329 3.41797 17.834C3.41797 17.3092 3.78802 16.8582 4.3584 16.543L4.44043 16.5088C4.63455 16.4489 4.8485 16.5346 4.94727 16.7197C5.05912 16.9297 4.98352 17.1931 4.77441 17.3096L4.77344 17.3105C4.59615 17.4085 4.46965 17.5092 4.38965 17.6035C4.30982 17.6976 4.28418 17.7754 4.28418 17.834C4.28426 17.902 4.32146 17.999 4.43945 18.1162C4.55607 18.232 4.73609 18.3517 4.97852 18.459C5.46261 18.6732 6.16327 18.8261 7 18.8262C7.83663 18.8262 8.53736 18.6732 9.02148 18.459C9.26409 18.3516 9.44491 18.2321 9.56152 18.1162C9.67949 17.999 9.71574 17.9019 9.71582 17.834C9.71582 17.7753 9.69055 17.6968 9.61035 17.6025C9.52997 17.5081 9.40252 17.4075 9.22461 17.3096C9.01505 17.1938 8.93852 16.9292 9.05078 16.7188ZM7 0.299805C10.4221 0.299912 13.2002 3.13253 13.2002 6.60645C13.2001 6.93569 13.057 7.4353 12.8311 8.03613C12.6014 8.64669 12.2745 9.39067 11.8828 10.2207C11.0993 11.8812 10.0517 13.9008 8.99316 15.916C8.80372 16.2767 8.63427 16.5985 8.49023 16.875L8.1377 17.5605C7.91736 18.0023 7.49037 18.2705 7 18.2705C6.5094 18.2704 6.08266 18.0025 5.8623 17.5605C5.65612 17.1476 5.30621 16.4893 4.89941 15.7227C3.86843 13.7801 2.84741 11.8297 2.08398 10.21C1.70235 9.40024 1.38307 8.66973 1.15918 8.06152C0.938183 7.46117 0.799805 6.95534 0.799805 6.60645C0.799838 3.13253 3.57781 0.299805 7 0.299805ZM7 1.1748C4.0623 1.17491 1.66602 3.60867 1.66602 6.60645C1.66608 6.7303 1.69967 6.91897 1.77246 7.1709C1.84429 7.41946 1.94977 7.71641 2.08203 8.05078C2.34649 8.71934 2.7151 9.52781 3.12891 10.3838C3.9563 12.0952 4.95941 13.9856 5.66211 15.3096C6.06915 16.0765 6.42302 16.7428 6.63477 17.167C6.70933 17.3163 6.83925 17.3964 7 17.3965C7.16084 17.3965 7.29064 17.3164 7.36523 17.167C7.54799 16.8014 7.84959 16.2284 8.22852 15.5068C8.95024 14.1325 9.98083 12.17 10.8311 10.4102C11.2562 9.53008 11.6353 8.70365 11.9072 8.02832C12.0432 7.69054 12.1507 7.39294 12.2246 7.14746C12.2999 6.89723 12.335 6.71701 12.335 6.60645C12.3349 3.60785 9.93776 1.1748 7 1.1748ZM7 2.58008C9.18688 2.58008 10.9599 4.38958 10.96 6.60645C10.96 8.82334 9.1869 10.6328 7 10.6328C4.81319 10.6327 3.04004 8.82327 3.04004 6.60645C3.04007 4.38965 4.81321 2.58018 7 2.58008ZM7 3.4541C5.29759 3.45421 3.90628 4.865 3.90625 6.60645C3.90625 8.34792 5.29757 9.75868 7 9.75879C8.7025 9.75879 10.0947 8.3476 10.0947 6.60645C10.0947 4.86531 8.70248 3.4541 7 3.4541Z" fill="#316FAF" stroke="currentColor" stroke-width="0.4"/>
+                                                </svg>
+                                            </span>
+                                            <span class="font-heading font-medium text-[15px] text-dark dark:text-text-on-dark">Poznań 22-200</span>
+                                        </div>
+                                        <h3 class="text-h3 uppercase font-heading font-semibold mb-4 dark:text-white">
+    Poznań Park 2
+</h3>                                        <p class="text-text dark:text-text-on-dark mb-4">Poznań Park to kameralne osiedle nowoczesnych domów, które harmonijnie łączy komfort życia z bliskością natury. Położone zaledwie 10 minut od centrum Poznania, oferuje ciszę i zieleń bez kompromisów – z łatwym dostępem do miejskich udogodnień.</p>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="px-6 lg:px-8 py-4 lg:py-[18px] bg-primary text-white hover:bg-primary-hovered active:bg-primary-clicked rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px]" href="#" text="Poznaj szczegóły" type="primary" icon="true">
+    Poznaj szczegóły
+            <span class="ml-2.5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.92235 15.3228L4.74384 14.1443L11.8149 7.07324L5.3331 7.07324V5.39975H14.6669V14.7336H12.9934L12.9934 8.25175L5.92235 15.3228Z" fill="currentColor"/>
+</svg>        </span>
+      
+</a>                                    </div>
+                                </div>
+                                <div class="lg:col-span-7">
+                                    <figure class="relative">
+            <picture>
+            <source srcset="media/images/invest-2.webp" type="image/webp" class="w-full h-[540px] object-cover object-center lg:rounded-r-theme-inner">
+            <img src="media/images/invest-2.jpeg" alt="Poznań Park 2" class="w-full h-[540px] object-cover object-center lg:rounded-r-theme-inner">
+        </picture>
+        </figure>                                </div>
+                            </div>
+                        </li>
+                                            <li class="whitespace-normal w-full">
+                            <div class="grid lg:grid-cols-12 gap-4">
+                                <div class="lg:col-span-5 flex flex-col justify-center p-6 space-y-8">
+                                    <div class="space-y-4 xl:-mt-16 xl:pr-8">
+                                        <div class="flex items-center gap-2">
+                                            <span aria-hidden="true" class="relative w-[50px] h-[50px] shrink-0 flex items-center text-primary bg-background-medium-surface rounded-full border-[7px] border-stroke-subtle justify-center overflow-hidden">
+                                                <span class="absolute size-6 left-1/2 top-1/2 transform -translate-1/2 bg-gradient-to-t from-dark to-background-medium-surface blur opacity-20 skew-12"></span>
+                                                <svg class="w-[14px] h-[19px] shrink-0" width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.05078 16.7188C9.16331 16.5081 9.42608 16.4253 9.63867 16.542C10.2107 16.8569 10.582 17.3082 10.582 17.834C10.5819 18.4329 10.1147 18.9207 9.4043 19.2432C8.74824 19.5408 7.89412 19.7002 7 19.7002C6.10589 19.7002 5.25173 19.5408 4.5957 19.2432C3.88542 18.9207 3.41808 18.4329 3.41797 17.834C3.41797 17.3092 3.78802 16.8582 4.3584 16.543L4.44043 16.5088C4.63455 16.4489 4.8485 16.5346 4.94727 16.7197C5.05912 16.9297 4.98352 17.1931 4.77441 17.3096L4.77344 17.3105C4.59615 17.4085 4.46965 17.5092 4.38965 17.6035C4.30982 17.6976 4.28418 17.7754 4.28418 17.834C4.28426 17.902 4.32146 17.999 4.43945 18.1162C4.55607 18.232 4.73609 18.3517 4.97852 18.459C5.46261 18.6732 6.16327 18.8261 7 18.8262C7.83663 18.8262 8.53736 18.6732 9.02148 18.459C9.26409 18.3516 9.44491 18.2321 9.56152 18.1162C9.67949 17.999 9.71574 17.9019 9.71582 17.834C9.71582 17.7753 9.69055 17.6968 9.61035 17.6025C9.52997 17.5081 9.40252 17.4075 9.22461 17.3096C9.01505 17.1938 8.93852 16.9292 9.05078 16.7188ZM7 0.299805C10.4221 0.299912 13.2002 3.13253 13.2002 6.60645C13.2001 6.93569 13.057 7.4353 12.8311 8.03613C12.6014 8.64669 12.2745 9.39067 11.8828 10.2207C11.0993 11.8812 10.0517 13.9008 8.99316 15.916C8.80372 16.2767 8.63427 16.5985 8.49023 16.875L8.1377 17.5605C7.91736 18.0023 7.49037 18.2705 7 18.2705C6.5094 18.2704 6.08266 18.0025 5.8623 17.5605C5.65612 17.1476 5.30621 16.4893 4.89941 15.7227C3.86843 13.7801 2.84741 11.8297 2.08398 10.21C1.70235 9.40024 1.38307 8.66973 1.15918 8.06152C0.938183 7.46117 0.799805 6.95534 0.799805 6.60645C0.799838 3.13253 3.57781 0.299805 7 0.299805ZM7 1.1748C4.0623 1.17491 1.66602 3.60867 1.66602 6.60645C1.66608 6.7303 1.69967 6.91897 1.77246 7.1709C1.84429 7.41946 1.94977 7.71641 2.08203 8.05078C2.34649 8.71934 2.7151 9.52781 3.12891 10.3838C3.9563 12.0952 4.95941 13.9856 5.66211 15.3096C6.06915 16.0765 6.42302 16.7428 6.63477 17.167C6.70933 17.3163 6.83925 17.3964 7 17.3965C7.16084 17.3965 7.29064 17.3164 7.36523 17.167C7.54799 16.8014 7.84959 16.2284 8.22852 15.5068C8.95024 14.1325 9.98083 12.17 10.8311 10.4102C11.2562 9.53008 11.6353 8.70365 11.9072 8.02832C12.0432 7.69054 12.1507 7.39294 12.2246 7.14746C12.2999 6.89723 12.335 6.71701 12.335 6.60645C12.3349 3.60785 9.93776 1.1748 7 1.1748ZM7 2.58008C9.18688 2.58008 10.9599 4.38958 10.96 6.60645C10.96 8.82334 9.1869 10.6328 7 10.6328C4.81319 10.6327 3.04004 8.82327 3.04004 6.60645C3.04007 4.38965 4.81321 2.58018 7 2.58008ZM7 3.4541C5.29759 3.45421 3.90628 4.865 3.90625 6.60645C3.90625 8.34792 5.29757 9.75868 7 9.75879C8.7025 9.75879 10.0947 8.3476 10.0947 6.60645C10.0947 4.86531 8.70248 3.4541 7 3.4541Z" fill="#316FAF" stroke="currentColor" stroke-width="0.4"/>
+                                                </svg>
+                                            </span>
+                                            <span class="font-heading font-medium text-[15px] text-dark dark:text-text-on-dark">Poznań 23-300</span>
+                                        </div>
+                                        <h3 class="text-h3 uppercase font-heading font-semibold mb-4 dark:text-white">
+    Poznań Park 3
+</h3>                                        <p class="text-text dark:text-text-on-dark mb-4">Poznań Park to kameralne osiedle nowoczesnych domów, które harmonijnie łączy komfort życia z bliskością natury. Położone zaledwie 10 minut od centrum Poznania, oferuje ciszę i zieleń bez kompromisów – z łatwym dostępem do miejskich udogodnień.</p>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="px-6 lg:px-8 py-4 lg:py-[18px] bg-primary text-white hover:bg-primary-hovered active:bg-primary-clicked rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px]" href="#" text="Poznaj szczegóły" type="primary" icon="true">
+    Poznaj szczegóły
+            <span class="ml-2.5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.92235 15.3228L4.74384 14.1443L11.8149 7.07324L5.3331 7.07324V5.39975H14.6669V14.7336H12.9934L12.9934 8.25175L5.92235 15.3228Z" fill="currentColor"/>
+</svg>        </span>
+      
+</a>                                    </div>
+                                </div>
+                                <div class="lg:col-span-7">
+                                    <figure class="relative">
+            <picture>
+            <source srcset="media/images/invest.webp" type="image/webp" class="w-full h-[540px] object-cover object-center lg:rounded-r-theme-inner">
+            <img src="media/images/invest.jpg" alt="Poznań Park 3" class="w-full h-[540px] object-cover object-center lg:rounded-r-theme-inner">
+        </picture>
+        </figure>                                </div>
+                            </div>
+                        </li>
+                                            <li class="whitespace-normal w-full">
+                            <div class="grid lg:grid-cols-12 gap-4">
+                                <div class="lg:col-span-5 flex flex-col justify-center p-6 space-y-8">
+                                    <div class="space-y-4 xl:-mt-16 xl:pr-8">
+                                        <div class="flex items-center gap-2">
+                                            <span aria-hidden="true" class="relative w-[50px] h-[50px] shrink-0 flex items-center text-primary bg-background-medium-surface rounded-full border-[7px] border-stroke-subtle justify-center overflow-hidden">
+                                                <span class="absolute size-6 left-1/2 top-1/2 transform -translate-1/2 bg-gradient-to-t from-dark to-background-medium-surface blur opacity-20 skew-12"></span>
+                                                <svg class="w-[14px] h-[19px] shrink-0" width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.05078 16.7188C9.16331 16.5081 9.42608 16.4253 9.63867 16.542C10.2107 16.8569 10.582 17.3082 10.582 17.834C10.5819 18.4329 10.1147 18.9207 9.4043 19.2432C8.74824 19.5408 7.89412 19.7002 7 19.7002C6.10589 19.7002 5.25173 19.5408 4.5957 19.2432C3.88542 18.9207 3.41808 18.4329 3.41797 17.834C3.41797 17.3092 3.78802 16.8582 4.3584 16.543L4.44043 16.5088C4.63455 16.4489 4.8485 16.5346 4.94727 16.7197C5.05912 16.9297 4.98352 17.1931 4.77441 17.3096L4.77344 17.3105C4.59615 17.4085 4.46965 17.5092 4.38965 17.6035C4.30982 17.6976 4.28418 17.7754 4.28418 17.834C4.28426 17.902 4.32146 17.999 4.43945 18.1162C4.55607 18.232 4.73609 18.3517 4.97852 18.459C5.46261 18.6732 6.16327 18.8261 7 18.8262C7.83663 18.8262 8.53736 18.6732 9.02148 18.459C9.26409 18.3516 9.44491 18.2321 9.56152 18.1162C9.67949 17.999 9.71574 17.9019 9.71582 17.834C9.71582 17.7753 9.69055 17.6968 9.61035 17.6025C9.52997 17.5081 9.40252 17.4075 9.22461 17.3096C9.01505 17.1938 8.93852 16.9292 9.05078 16.7188ZM7 0.299805C10.4221 0.299912 13.2002 3.13253 13.2002 6.60645C13.2001 6.93569 13.057 7.4353 12.8311 8.03613C12.6014 8.64669 12.2745 9.39067 11.8828 10.2207C11.0993 11.8812 10.0517 13.9008 8.99316 15.916C8.80372 16.2767 8.63427 16.5985 8.49023 16.875L8.1377 17.5605C7.91736 18.0023 7.49037 18.2705 7 18.2705C6.5094 18.2704 6.08266 18.0025 5.8623 17.5605C5.65612 17.1476 5.30621 16.4893 4.89941 15.7227C3.86843 13.7801 2.84741 11.8297 2.08398 10.21C1.70235 9.40024 1.38307 8.66973 1.15918 8.06152C0.938183 7.46117 0.799805 6.95534 0.799805 6.60645C0.799838 3.13253 3.57781 0.299805 7 0.299805ZM7 1.1748C4.0623 1.17491 1.66602 3.60867 1.66602 6.60645C1.66608 6.7303 1.69967 6.91897 1.77246 7.1709C1.84429 7.41946 1.94977 7.71641 2.08203 8.05078C2.34649 8.71934 2.7151 9.52781 3.12891 10.3838C3.9563 12.0952 4.95941 13.9856 5.66211 15.3096C6.06915 16.0765 6.42302 16.7428 6.63477 17.167C6.70933 17.3163 6.83925 17.3964 7 17.3965C7.16084 17.3965 7.29064 17.3164 7.36523 17.167C7.54799 16.8014 7.84959 16.2284 8.22852 15.5068C8.95024 14.1325 9.98083 12.17 10.8311 10.4102C11.2562 9.53008 11.6353 8.70365 11.9072 8.02832C12.0432 7.69054 12.1507 7.39294 12.2246 7.14746C12.2999 6.89723 12.335 6.71701 12.335 6.60645C12.3349 3.60785 9.93776 1.1748 7 1.1748ZM7 2.58008C9.18688 2.58008 10.9599 4.38958 10.96 6.60645C10.96 8.82334 9.1869 10.6328 7 10.6328C4.81319 10.6327 3.04004 8.82327 3.04004 6.60645C3.04007 4.38965 4.81321 2.58018 7 2.58008ZM7 3.4541C5.29759 3.45421 3.90628 4.865 3.90625 6.60645C3.90625 8.34792 5.29757 9.75868 7 9.75879C8.7025 9.75879 10.0947 8.3476 10.0947 6.60645C10.0947 4.86531 8.70248 3.4541 7 3.4541Z" fill="#316FAF" stroke="currentColor" stroke-width="0.4"/>
+                                                </svg>
+                                            </span>
+                                            <span class="font-heading font-medium text-[15px] text-dark dark:text-text-on-dark">Poznań 24-400</span>
+                                        </div>
+                                        <h3 class="text-h3 uppercase font-heading font-semibold mb-4 dark:text-white">
+    Poznań Park 4
+</h3>                                        <p class="text-text dark:text-text-on-dark mb-4">Poznań Park to kameralne osiedle nowoczesnych domów, które harmonijnie łączy komfort życia z bliskością natury. Położone zaledwie 10 minut od centrum Poznania, oferuje ciszę i zieleń bez kompromisów – z łatwym dostępem do miejskich udogodnień.</p>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="px-6 lg:px-8 py-4 lg:py-[18px] bg-primary text-white hover:bg-primary-hovered active:bg-primary-clicked rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px]" href="#" text="Poznaj szczegóły" type="primary" icon="true">
+    Poznaj szczegóły
+            <span class="ml-2.5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.92235 15.3228L4.74384 14.1443L11.8149 7.07324L5.3331 7.07324V5.39975H14.6669V14.7336H12.9934L12.9934 8.25175L5.92235 15.3228Z" fill="currentColor"/>
+</svg>        </span>
+      
+</a>                                    </div>
+                                </div>
+                                <div class="lg:col-span-7">
+                                    <figure class="relative">
+            <picture>
+            <source srcset="media/images/invest-2.webp" type="image/webp" class="w-full h-[540px] object-cover object-center lg:rounded-r-theme-inner">
+            <img src="media/images/invest-2.jpeg" alt="Poznań Park 4" class="w-full h-[540px] object-cover object-center lg:rounded-r-theme-inner">
+        </picture>
+        </figure>                                </div>
+                            </div>
+                        </li>
+                                    </ul>
+            </div>
+            <div class="glide__arrows pointer-events-none xl:absolute xl:bottom-0 xl:left-0 gap-4 p-8 flex items-center justify-center xl:justify-between z-10" data-glide-el="controls">
+                <!-- Previous Button -->
+                <button
+                    class="glide__arrow glide__arrow--left pointer-events-auto cursor-pointer w-[53px] h-[53px] disabled:opacity-30 rounded-theme border border-dark dark:border-stroke-on-dark dark:bg-background-section dark:text-white hover:border-stroke-on-dark hover:text-stroke-on-dark active:border-text-on-dark active:text-text-on-dark p-1 inline-flex items-center justify-center"
+                    data-glide-dir="<"
+                >
+                    <span aria-hidden="true">
+                        <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.548 6.57999L8.487 5.51999L2.708 11.297C2.61484 11.3896 2.54091 11.4996 2.49047 11.6209C2.44002 11.7421 2.41405 11.8722 2.41405 12.0035C2.41405 12.1348 2.44002 12.2648 2.49047 12.3861C2.54091 12.5073 2.61484 12.6174 2.708 12.71L8.487 18.49L9.547 17.43L4.123 12.005L9.548 6.57999Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    <span class="sr-only">Przejdź do poprzedniego widoku</span>
+                </button>
+    
+                <!-- Next Button -->
+                <button
+                    class="glide__arrow glide__arrow--left pointer-events-auto cursor-pointer w-[53px] h-[53px] disabled:opacity-30 rounded-theme border border-dark dark:border-stroke-on-dark dark:bg-background-section dark:text-white hover:border-stroke-on-dark hover:text-stroke-on-dark active:border-text-on-dark active:text-text-on-dark p-1 inline-flex items-center justify-center"
+                    data-glide-dir=">"
+                >
+                    <span aria-hidden="true">
+                        <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.452 6.57999L3.513 5.51999L9.292 11.297C9.38516 11.3896 9.45909 11.4996 9.50953 11.6209C9.55998 11.7421 9.58595 11.8722 9.58595 12.0035C9.58595 12.1348 9.55998 12.2648 9.50953 12.3861C9.45909 12.5073 9.38516 12.6174 9.292 12.71L3.513 18.49L2.453 17.43L7.877 12.005L2.452 6.57999Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    <span class="sr-only">Przejdź do kolejnego widoku</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>    <section class="relative w-full py-16 lg:py-20 bg-white dark:bg-dark">
+    <div class="container mx-auto px-6 space-y-16 lg:space-y-20">
+        <header class="max-w-7xl mx-auto space-y-5">
+            <h2 class="text-dark dark:text-white text-h2 uppercase font-medium font-heading">
+    Poradnik<br>po nieruchomościach
+</h2>        </header>
+        <div class="max-w-7xl mx-auto flex overflow-x-auto snap-x snap-mandatory gap-8">
+                            <div class="bg-white dark:bg-dark/90 p-6 border rounded-theme-inner border-stroke-base dark:border-stroke-on-dark space-y-5 shrink-0 w-10/12 md:w-[405px] snap-start">
+                    <figure class="relative">
+            <picture>
+            <source srcset="media/images/article-1.webp" type="image/webp" class="w-full h-56 object-cover object-center rounded-theme-inner">
+            <img src="media/images/article-1.jpg" alt="Jak kupić nieruchomość i nie zwariować? Przewodnik dla początkujących." class="w-full h-56 object-cover object-center rounded-theme-inner">
+        </picture>
+        </figure>                    <h3 class="text-body-lg uppercase font-heading dark:text-text-on-dark pt-5">
+    Jak kupić nieruchomość i nie zwariować? Przewodnik dla początkujących.
+</h3>                    <div class="pt-8">
+                        <a href="#" class="px-6 lg:px-8 py-4 lg:py-[18px] text-dark dark:text-white bg-transparent ring ring-stroke-base ring-inset hover:text-text-on-dark active:text-background-medium-surface rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px] uppercase" href="#" text="Przejdź do artykułu" type="secondary">
+    Przejdź do artykułu
+      
+</a>                    </div>
+                </div>
+                            <div class="bg-white dark:bg-dark/90 p-6 border rounded-theme-inner border-stroke-base dark:border-stroke-on-dark space-y-5 shrink-0 w-10/12 md:w-[405px] snap-start">
+                    <figure class="relative">
+            <picture>
+            <source srcset="media/images/article-2.webp" type="image/webp" class="w-full h-56 object-cover object-center rounded-theme-inner">
+            <img src="media/images/article-2.jpg" alt="Czym różni się inwestycja w nieruchomość od zwykłego zakupu?" class="w-full h-56 object-cover object-center rounded-theme-inner">
+        </picture>
+        </figure>                    <h3 class="text-body-lg uppercase font-heading dark:text-text-on-dark pt-5">
+    Czym różni się inwestycja w nieruchomość od zwykłego zakupu?
+</h3>                    <div class="pt-8">
+                        <a href="#" class="px-6 lg:px-8 py-4 lg:py-[18px] text-dark dark:text-white bg-transparent ring ring-stroke-base ring-inset hover:text-text-on-dark active:text-background-medium-surface rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px] uppercase" href="#" text="Przejdź do artykułu" type="secondary">
+    Przejdź do artykułu
+      
+</a>                    </div>
+                </div>
+                            <div class="bg-white dark:bg-dark/90 p-6 border rounded-theme-inner border-stroke-base dark:border-stroke-on-dark space-y-5 shrink-0 w-10/12 md:w-[405px] snap-start">
+                    <figure class="relative">
+            <picture>
+            <source srcset="media/images/article-3.webp" type="image/webp" class="w-full h-56 object-cover object-center rounded-theme-inner">
+            <img src="media/images/article-3.jpg" alt="5 technologii, które powinny mieć nowoczesne domy w 2025 roku." class="w-full h-56 object-cover object-center rounded-theme-inner">
+        </picture>
+        </figure>                    <h3 class="text-body-lg uppercase font-heading dark:text-text-on-dark pt-5">
+    5 technologii, które powinny mieć nowoczesne domy w 2025 roku.
+</h3>                    <div class="pt-8">
+                        <a href="#" class="px-6 lg:px-8 py-4 lg:py-[18px] text-dark dark:text-white bg-transparent ring ring-stroke-base ring-inset hover:text-text-on-dark active:text-background-medium-surface rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px] uppercase" href="#" text="Przejdź do artykułu" type="secondary">
+    Przejdź do artykułu
+      
+</a>                    </div>
+                </div>
+                    </div>
+        <div class="max-w-7xl mx-auto text-center">
+            <a href="#" class="px-6 lg:px-8 py-4 lg:py-[18px] bg-primary text-white hover:bg-primary-hovered active:bg-primary-clicked rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px] uppercase" href="#" text="Więcej poradników" type="primary" icon="true">
+    Więcej poradników
+            <span class="ml-2.5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.92235 15.3228L4.74384 14.1443L11.8149 7.07324L5.3331 7.07324V5.39975H14.6669V14.7336H12.9934L12.9934 8.25175L5.92235 15.3228Z" fill="currentColor"/>
+</svg>        </span>
+      
+</a>        </div>
+    </div>
+</section>    <section class="relative w-full py-16 lg:py-20 bg-background-subtle dark:bg-dark">
+    <div class="container mx-auto px-6 space-y-5">
+        <header class="max-w-7xl mx-auto space-y-5">
+            <h2 class="text-dark dark:text-white text-h2 uppercase font-medium font-heading">
+    Porozmawiajmy
+</h2>        </header>
+        <div class="max-w-7xl mx-auto py-12 px-8 bg-background-alt border border-white dark:border-stroke-on-dark dark:bg-dark/80 rounded-theme-inner space-y-10">
+            <h2 class="text-dark dark:text-white text-body-lg uppercase font-medium font-heading">
+    Zostaw nam wiadomość
+</h2>            <div class="relative">
+                <form 
+                    action="#" 
+                    method="POST"
+                    id="contact-form" 
+                    x-data="{
+                        runConfetti() {
+                            var end = Date.now() + (1.5 * 1000);
+                            var colors = ['#bb0000', '#ffffff', '#75d14c', '#f8f452'];
+
+                            (function frame() {
+                                confetti({
+                                    particleCount: 4,
+                                    angle: 60,
+                                    spread: 55,
+                                    origin: { x: 0 },
+                                    colors: colors
+                                });
+                                confetti({
+                                    particleCount: 4,
+                                    angle: 120,
+                                    spread: 55,
+                                    origin: { x: 1 },
+                                    colors: colors
+                                });
+
+                                if (Date.now() < end) {
+                                    requestAnimationFrame(frame);
+                                }
+                            }());
+                            setTimeout(() => {
+                                $el.reset();
+                            }, 500);
+                        }
+                    }"
+                    x-validate.validate-on-submit
+                    @submit.prevent="if ($validate.isComplete('contact-form')) runConfetti()"
+                    class="space-y-10"
+                >
+                    <div class="grid lg:grid-cols-7 gap-5">
+                        <div class="lg:col-span-2">
+                            <label for="email" class="block text-body-sm font-heading uppercase text-dark dark:text-white">Adres email</label>                            <div class="mt-2">
+    <input 
+        type="email" 
+        name="email" 
+        id="email" 
+        class="block min-w-0 grow px-2 py-1 text-body-base rounded-lg bg-white dark:bg-dark dark:text-text-on-dark min-h-[50px] border border-stroke-base placeholder:text-text dark:placeholder:text-text-on-dark focus:outline-none focus:border-primary user-invalid:border-[#B3261E] user-invalid:bg-[#f3eae8] user-invalid:text-[#B3261E] user-invalid:placeholder:text-[#B3261E] mt-1 block w-full" 
+        placeholder="Twój adres E-mail"
+        required="required" class="mt-1 block w-full" id="email" name="email" type="email" placeholder="Twój adres E-mail" data-error-msg="Proszę podać poprawny adres e-mail."
+            />
+</div>                        </div>
+                        <div class="lg:col-span-2">
+                            <label for="name" class="block text-body-sm font-heading uppercase text-dark dark:text-white">Imię i nazwisko</label>                            <div class="mt-2">
+    <input 
+        type="text" 
+        name="name" 
+        id="name" 
+        class="block min-w-0 grow px-2 py-1 text-body-base rounded-lg bg-white dark:bg-dark dark:text-text-on-dark min-h-[50px] border border-stroke-base placeholder:text-text dark:placeholder:text-text-on-dark focus:outline-none focus:border-primary user-invalid:border-[#B3261E] user-invalid:bg-[#f3eae8] user-invalid:text-[#B3261E] user-invalid:placeholder:text-[#B3261E] mt-1 block w-full" 
+        placeholder="Twoje imię i nazwisko"
+        required="required" class="mt-1 block w-full" id="name" name="name" type="text" placeholder="Twoje imię i nazwisko" data-error-msg="Proszę podać swoje imię i nazwisko."
+            />
+</div>                        </div>
+                        <div class="lg:col-span-3">
+                            <label for="subject" class="block text-body-sm font-heading uppercase text-dark dark:text-white">Temat rozmowy</label>                            <div class="mt-2">
+    <input 
+        type="text" 
+        name="subject" 
+        id="subject" 
+        class="block min-w-0 grow px-2 py-1 text-body-base rounded-lg bg-white dark:bg-dark dark:text-text-on-dark min-h-[50px] border border-stroke-base placeholder:text-text dark:placeholder:text-text-on-dark focus:outline-none focus:border-primary user-invalid:border-[#B3261E] user-invalid:bg-[#f3eae8] user-invalid:text-[#B3261E] user-invalid:placeholder:text-[#B3261E] mt-1 block w-full" 
+        placeholder="O czym chesz porozmawiać?"
+        required="required" class="mt-1 block w-full" id="subject" name="subject" type="text" placeholder="O czym chesz porozmawiać?" data-error-msg="Proszę podać temat rozmowy."
+            />
+</div>                        </div>
+                        <div class="lg:col-span-7">
+                            <label for="subject" class="block text-body-sm font-heading uppercase text-dark dark:text-white">Wiadomość</label>                            <div class="mt-2">
+    <textarea 
+        name="message" 
+        id="message" 
+        class="block min-w-0 grow p-2 text-body-base rounded-lg bg-white dark:bg-dark min-h-[50px] dark:text-text-on-dark border border-stroke-base placeholder:text-text dark:placeholder:text-text-on-dark focus:outline-none focus:border-primary user-invalid:border-[#B3261E] user-invalid:bg-[#f3eae8] user-invalid:text-[#B3261E] user-invalid:placeholder:text-[#B3261E] mt-1 block w-full h-[150px]" 
+        placeholder="Napisz swoją wiadomość"
+        required="required" class="mt-1 block w-full h-[150px]" id="message" name="message" placeholder="Napisz swoją wiadomość" data-error-msg="Proszę wpisać treść wiadomości."
+            ></textarea>
+</div>                        </div>
+                        <div class="lg:col-span-7">
+                            <div class="relative" data-error-msg='Proszę zaakceptować regulamin.'>
+                                <label 
+                                    class="text-body-xs text-text dark:text-text-on-dark flex items-start gap-2 cursor-pointer">
+                                    <input 
+                                        id="terms" 
+                                        name="terms" 
+                                        type="checkbox" 
+                                        required
+                                        x-validate.group
+                                        class="peer relative size-4 shrink-0 appearance-none rounded-full border border-stroke-base bg-white before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden checked:border-primary checked:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary user-invalid:border-[#B3261E]" 
+                                    />
+                                    <span class="block peer-user-invalid:text-[#B3261E] dark:peer-user-invalid:text-[#f3eae8]">Wyrażam zgodę na przetwarzanie moich danych osobowych w postaci imienia, nazwiska, adresu e-mail i nr tel. (jeżeli został podany), podanych w powyższym formularzu, zgodnie z przepisami rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych), Dz. Urz. UE z 4.5.2016 r. L 119, str. 1), w celu udzielenia odpowiedzi na złożone zapytanie. Żądanie usunięcia danych proszę kierować na adres biuro@realestate.com <span class="block mt-4">Informujemy, że: 1. Administratorem Pani/Pana danych osobowych jest RealEstate sp. z o.o. z siedzibą w Poznaniu przy ul. Długiej 5 lok. 25, 01-200 Poznań (KRS nr 0001000000) (dalej „Administrator”) e-mail: biuro@realestate.com</span></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="px-6 lg:px-8 py-4 lg:py-[18px] bg-primary text-white hover:bg-primary-hovered active:bg-primary-clicked rounded-theme focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary-clicked leading-none max-w-sm:w-full font-heading whitespace-nowrap inline-flex items-center justify-center transition-colors duration-300 text-[15px]" type="submit" text="Wyślij wiadomość" icon="true">
+    Wyślij wiadomość
+            <span class="ml-2.5">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.92235 15.3228L4.74384 14.1443L11.8149 7.07324L5.3331 7.07324V5.39975H14.6669V14.7336H12.9934L12.9934 8.25175L5.92235 15.3228Z" fill="currentColor"/>
+</svg>        </span>
+      
+</button>                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section></main>
+
+
+    <footer aria-label="Stopka" class="dark:bg-dark bg-white text-dark dark:text-white px-6 py-4">
+        <div class="container mx-auto px-6">
+            <div class="space-y-4 text-center max-w-7xl mx-auto">
+                <p class="text-body-sm font-heading">
+                    &copy; 2025 RealEstate Sp. z o.o. Wszelkie prawa zastrzeżone.
+                </p>
+                <p class="text-body-sm">
+                    Projekt i realizacja: <a href="https://crafton.pl" rel="nofollow noopener" class="hover:underline font-semibold">Crafton</a>
+                </p>
+                <p class="text-body-xs max-w-4xl mx-auto">
+                    Materiały zawarte na stronie WWW mają charakter poglądowy i nie mogą być traktowane jako ostateczne projekty realizacyjne. Deweloper zastrzega sobie prawo zmian. Niniejsza informacja nie stanowi oferty w rozumieniu przepisów Kodeksu Cywilnego i ma wyłącznie charakter informacyjny.
+                </p>
+                                    <div class="flex justify-center">
+                        <button type="button" @click="toggleTheme(); console.log('click')" class="flex items-center px-2 py-1" title="Zmień motyw">
+                            <span class="sr-only">Zmień motyw</span>
+                            <svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                            <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        </button>
+                    </div>
+                            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.5.x"></script>
+
+<script defer src="https://unpkg.com/@alpinejs/ui@3.14.9/dist/cdn.min.js"></script>
+<script defer src="https://unpkg.com/@alpinejs/focus@3.14.9/dist/cdn.min.js"></script>
+<script defer src="https://unpkg.com/@colinaut/alpinejs-plugin-simple-validate@1/dist/alpine.validate.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.14.9/dist/cdn.min.js"></script>
+
+<script>
+    function toggleTheme() {
+        if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem('color-theme', 'light');
+            document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+        } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem('color-theme', 'dark');
+            document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+        }
+    }
+</script>
+
+
+
+
+
+
+    <a 
+        href="#app" 
+        aria-label="Przewiń do góry" 
+        x-data="{show: false}"
+        @scroll.window="show = (window.scrollY > 300)"
+        :class="show ? 'flex' : 'hidden'"
+        class="fixed bottom-4 right-4 z-50 bg-white dark:bg-dark w-10 h-10 items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+    >
+        <svg width="1.5rem" height="1.5rem" role="presentation" class="fill-current text-primary dark:text-text-on-dark h-5 w-5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+        </svg>
+        <span class="sr-only">Przewiń do góry</span>
+    </a>
+</body>
+</html>

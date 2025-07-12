@@ -1,0 +1,216 @@
+/*
+* This file is loaded into your Hyde/Hyde installation and is used to generate the styles for your project.
+* You can use this file to customize your TailwindCSS or to add new classes.
+*
+* The HydeFront package contains some base styles to make your site look even more amazing.
+*
+* The compiled result of this file is shipped with HydePHP and is found at _media/app.css,
+* so you don't need to compile this file unless you're making changes to Tailwind styles.
+*
+* If you want, you can load the compiled file with minified styles for a base install from the CDN.
+* See https://hydephp.com/docs/1.x/managing-assets#loading-from-cdn
+*/
+
+/* @import 'hydefront/components/torchlight.css' layer(base); */
+@import 'tailwindcss' theme(static);
+@import './fonts.css';
+@custom-variant dark (&:where(.dark, .dark *));
+@theme static {
+    --font-display: 'Instrument Sans', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-heading: 'ClashDisplay-Variable', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-heading--font-variation-settings: 'wght' 500;
+
+    --color-amber-*: initial;
+    --color-indigo-*: initial;
+    --color-green-*: initial;
+    --color-red-*: initial;
+    --color-rose-*: initial;
+    --color-teal-*: initial;
+    --color-sky-*: initial;
+    --color-violet-*: initial;
+    --color-zinc-*: initial;
+    --color-yellow-*: initial;
+    --color-blue-*: initial;
+    --color-gray-*: initial;
+    --color-slate-*: initial;
+    --color-stone-*: initial;
+    --color-lime-*: initial;
+    --color-fuchsia-*: initial;
+    --color-orange-*: initial;
+    --color-emerald-*: initial;
+    --color-cyan-*: initial;
+    --color-purple-*: initial;
+    --color-neutral-*: initial;
+
+    /* --color-primary-50: oklch(95.71% 0.017 264.51);
+    --color-primary-100: oklch(92.3% 0.031 263.52);
+    --color-primary-200: oklch(84.46% 0.064 261.59);
+    --color-primary-300: oklch(76.65% 0.1 257.97);
+    --color-primary-400: oklch(68.89% 0.14 253.16);
+    --color-primary-500: oklch(61.26% 0.137 251.56);
+    --color-primary-600: oklch(53.25% 0.119 251.67); //primary
+    --color-primary-700: oklch(43.09% 0.097 251.46);
+    --color-primary-800: oklch(33.49% 0.075 251.63);
+    --color-primary-900: oklch(23.13% 0.053 251.88);
+    --color-primary-950: oklch(18.73% 0.042 250.39); */
+
+    --color-white: #FFFFFF;              /* Pure white for backgrounds and text */
+    --color-black: #000000;              /* Pure black for text and backgrounds */
+    --color-dark: #11273D;              /* Dark blue for headings and dark sections */
+    --color-primary: #316FAF;           /* Primary brand color for buttons, active elements, and key icons */
+    --color-primary-hovered: #215183;   /* Primary brand color (use for hovered buttons, active elements, and key icons) */
+    --color-primary-clicked: #16395C;   /* Primary pulse color (use for clicked buttons, active elements, and key icons) */
+    
+    /* Text colors */
+    --color-text: #4D4D4D;              /* Primary text color for paragraphs and general content */
+    --color-text-on-dark: #E3E3E3;      /* Light gray text for dark surfaces - high contrast text better than pure white */
+    --color-headings-dark: #11273D;     /* For hi-res dark text and secondary button text. Also background is inverted */
+    --color-headings-light: #FFFFFF;    /* Heading color in dark sections, and default site background */
+    
+    /* Background colors */
+    --color-background-default: #FFFFFF;        /* Default page background */
+    --color-background-subtle: #ECF4FA;         /* Background for badges, subtle highlighted areas */
+    --color-background-alt: #F6FBFF;            /* Alt background for hero content sections */
+    --color-background-section: #3C536A;        /* Dark themed internal section background */
+    --color-background-light-surface: #FEFEFE;   /* Soft surface for secondary actions */
+    --color-background-medium-surface: #BFD2E6; /* Background for icons and lightly emphasized UI blocks */
+    
+    /* Gradient */
+    --gradient-default: linear-gradient(180deg, #FFFFFF 0%, #ECF4FA 100%); /* Smooth transition gradient for sections (e.g., behind images) */
+    
+    /* Stroke/Border colors */
+    --color-stroke-base: #D3E0EB;        /* Main stroke for inputs, cards, and containers */
+    --color-stroke-light: #EBF3FA;       /* Low contrast separations */
+    --color-stroke-subtle: #EEF6FF;      /* Light outlines on bright backgrounds like surface-medium */
+    --color-stroke-on-dark: #5D6F80;     /* Outlines and separators in dark sections */
+    --color-stroke-icon-on-dark: #283C50; 
+
+    /* radius-xs radius-sm radius-md radius-lg radius-xl radius-2xl radius-3xl radius 4xl or calc(infinity * 1px) for rounded-full */
+    --radius-theme: calc(infinity * 1px);
+    --radius-theme-inner: var(--radius-xl);
+    --border-theme: 1px;
+    --ring-width-theme: 1px;
+    --padding-theme-inline: 2rem;
+
+    --breakpoint-sm: 40rem;
+    --breakpoint-md: 48rem;
+    --breakpoint-lg: 64rem;
+    --breakpoint-xl: 80rem;
+    --breakpoint-2xl: 90rem;
+
+    --container-3xs: 16rem;
+    --container-2xs: 18rem;
+    --container-xs: 20rem;
+    --container-sm: 24rem;
+    --container-md: 28rem;
+    --container-lg: 32rem;
+    --container-xl: 36rem;
+    --container-2xl: 42rem;
+    --container-3xl: 48rem;
+    --container-4xl: 56rem;
+    --container-5xl: 64rem;
+    --container-6xl: 72rem;
+    --container-7xl: 80rem;
+}
+
+/* Tailwind v4 CSS custom properties for font sizes based on Figma design system */
+@layer base {
+    html, body {
+        @apply font-sans text-base leading-normal text-text bg-background-default scroll-smooth;
+        scrollbar-width: none;
+    }
+
+    body::-webkit-scrollbar,
+    body::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    ::selection {
+        @apply bg-primary text-white;
+    }
+
+    :focus {
+        @apply outline-primary-clicked;
+    }
+
+    :root {
+        --font-size-body-xs: clamp(0.625rem, 0.625rem + ((1vw - 0.2rem) * 0.156), 0.75rem);     /* 10px - body/regular/XS */
+        --font-size-body-sm: clamp(0.75rem, 0.75rem + ((1vw - 0.2rem) * 0.156), 0.875rem);      /* 12px-14px - body/regular/S */
+        --font-size-body-base: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.156), 1rem);      /* 14px-16px - body/regular/M */
+        --font-size-body-lg: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.125), 1.125rem);            /* 16px-18px - body/regular/L to XL */
+        
+        --font-size-h6: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.156), 1rem);             /* 14px - headline/h6 */
+        --font-size-h5: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.125), 1.125rem);                 /* 16px - headline/h5 */
+        --font-size-h4: clamp(1.125rem, 1.125rem + ((1vw - 0.2rem) * 0.375), 1.5rem);           /* 18px-24px - headline/h4 */
+        --font-size-h3: clamp(1.5rem, 1.5rem + ((1vw - 0.2rem) * 0.5), 2rem);                   /* 24px-32px - headline/h3 */
+        --font-size-h2: clamp(2rem, 2rem + ((1vw - 0.2rem) * 0.625), 2.625rem);                 /* 32px-42px - headline/h2 */
+        --font-size-h1: clamp(2.625rem, 2.625rem + ((1vw - 0.2rem) * 0.875), 3.5rem);           /* 42px-56px - headline/h1 */
+        --font-size-h2-hero: clamp(2rem, 2rem + ((1vw - 0.2rem) * 1.5), 3.5rem);                /* 32px-56px - headline/h2-hero */
+        --font-size-h1-hero: clamp(2.5rem, 2.5rem + ((1vw - 0.2rem) * 2.188), 4.688rem);        /* 40px-75px - headline/h1-hero */
+        
+        --font-size-xs: var(--font-size-body-sm);      /* 12px-14px */
+        --font-size-sm: var(--font-size-body-base);    /* 14px-16px */
+        --font-size-base: var(--font-size-body-lg);    /* 16px-18px */
+        --font-size-lg: var(--font-size-h4);           /* 18px-24px */
+        --font-size-xl: var(--font-size-h3);           /* 24px-32px */
+        --font-size-2xl: var(--font-size-h2);          /* 32px-42px */
+        --font-size-3xl: var(--font-size-h1);          /* 42px-56px */
+        --font-size-4xl: var(--font-size-h2-hero);     /* 32px-56px */
+        --font-size-5xl: var(--font-size-h1-hero);     /* 40px-75px */
+        
+        --line-height-tight: 1.2;        /* 120% - for hero headlines */
+        --line-height-normal: 1.4;       /* 140% - for regular headlines */
+        --line-height-relaxed: 1.5;      /* 150% - for some body text */
+        --line-height-loose: 1.6;        /* 160% - for regular body text */
+        --line-height-extra-loose: 1.8;  /* 180% - for small text */
+        
+        --font-weight-regular: 400;
+        --font-weight-medium: 500;
+        --font-weight-semibold: 600;
+    }
+}
+
+/* Utility classes for semantic font sizes */
+@layer utilities {
+  .text-body-xs { font-size: var(--font-size-body-xs); line-height: var(--line-height-extra-loose); }
+  .text-body-sm { font-size: var(--font-size-body-sm); line-height: var(--line-height-loose); }
+  .text-body-base { font-size: var(--font-size-body-base); line-height: var(--line-height-loose); }
+  .text-body-lg { font-size: var(--font-size-body-lg); line-height: var(--line-height-relaxed); }
+  
+  .text-h6 { font-size: var(--font-size-h6); line-height: var(--line-height-normal); }
+  .text-h5 { font-size: var(--font-size-h5); line-height: var(--line-height-normal); }
+  .text-h4 { font-size: var(--font-size-h4); line-height: var(--line-height-normal); }
+  .text-h3 { font-size: var(--font-size-h3); line-height: var(--line-height-normal); }
+  .text-h2 { font-size: var(--font-size-h2); line-height: var(--line-height-normal); }
+  .text-h1 { font-size: var(--font-size-h1); line-height: var(--line-height-tight); }
+  .text-h2-hero { font-size: var(--font-size-h2-hero); line-height: var(--line-height-tight); }
+  .text-h1-hero { font-size: var(--font-size-h1-hero); line-height: var(--line-height-tight); }
+  
+  /* Font weight utilities */
+  .font-regular { font-weight: var(--font-weight-regular); }
+  .font-medium { font-weight: var(--font-weight-medium); }
+  .font-semibold { font-weight: var(--font-weight-semibold); }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-x: hidden;
+    scrollbar-width: none;
+  }
+
+  .glide__arrow--disabled {
+    @apply opacity-30 pointer-events-none;
+  }
+
+  .error-msg {
+    @apply text-[#B3261E] dark:text-[#f3eae8] text-sm mt-1;
+  }
+  
+}
+
+/* @config '../../tailwind.config.js'; */

@@ -1,0 +1,1 @@
+<label for="{{ $for ?? '' }}" class="block text-body-sm font-heading uppercase text-dark dark:text-white">{{ $text ?? '' }}</label>
