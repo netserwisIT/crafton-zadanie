@@ -120,3 +120,6 @@ The project uses a component-based architecture with Blade components:
 ## Styling
 
 The project uses TailwindCSS with custom typography plugin and Clash Display font family for modern, clean design.
+
+## Deploying to server
+Simply copy the public directory to your web server's document root, and you're ready to go.
