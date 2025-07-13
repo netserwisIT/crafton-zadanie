@@ -42,7 +42,7 @@
                                         <p class="text-text dark:text-text-on-dark mb-4">{{ $investment->description }}</p>
                                     </div>
                                     <div>
-                                        <x-elements.button-link href="{{ $investment->link }}" text="Poznaj szczegóły" type="primary" icon="true" />
+                                        <x-elements.button-link href="{{ $investment->link }}" text="Poznaj szczegóły" type="primary" icon="true" class="uppercase" />
                                     </div>
                                 </div>
                                 <div class="lg:col-span-7">

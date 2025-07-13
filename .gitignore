@@ -8,5 +8,5 @@
 .phpunit.result.cache
 
 .env
-
+/public
 # /_site

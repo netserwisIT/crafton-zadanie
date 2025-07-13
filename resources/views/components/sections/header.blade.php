@@ -29,7 +29,7 @@
           </svg>
         </button>
         <div class="hidden md:flex">
-          <x-elements.button-link href="#" text="Kontakt" type="primary-sm" icon="true" />
+          <x-elements.button-link href="#" text="Kontakt" type="primary-sm" icon="true" class="uppercase" />
         </div>
       </div>
     </nav>

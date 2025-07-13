@@ -2,7 +2,7 @@
     <footer aria-label="Stopka" class="dark:bg-dark bg-white text-dark dark:text-white px-6 py-4">
         <div class="container mx-auto px-6">
             <div class="space-y-4 text-center max-w-7xl mx-auto">
-                <p class="text-body-sm font-heading">
+                <p class="text-body-sm">
                     &copy; {{ date('Y') }} {{ config('theme.footerCopyright', 'Crafton') }}
                 </p>
                 <p class="text-body-sm">

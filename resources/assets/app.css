@@ -137,7 +137,7 @@
     }
 
     :root {
-        --font-size-body-xs: clamp(0.625rem, 0.625rem + ((1vw - 0.2rem) * 0.156), 0.75rem);     /* 10px - body/regular/XS */
+        --font-size-body-xs: 0.625rem; /* 10px - body/regular/XS */
         --font-size-body-sm: clamp(0.75rem, 0.75rem + ((1vw - 0.2rem) * 0.156), 0.875rem);      /* 12px-14px - body/regular/S */
         --font-size-body-base: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.156), 1rem);      /* 14px-16px - body/regular/M */
         --font-size-body-lg: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.125), 1.125rem);            /* 16px-18px - body/regular/L to XL */
