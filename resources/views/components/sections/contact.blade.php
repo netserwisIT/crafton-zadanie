@@ -124,6 +124,7 @@
                             type="submit" 
                             text="Wyślij wiadomość" 
                             icon="true"
+                            class="uppercase"
                         />
                     </div>
                 </form>
